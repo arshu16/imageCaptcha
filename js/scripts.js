@@ -22,7 +22,7 @@
 		ctx.font = "italic 50px Tahoma";
 		ctx.fillStyle = getRandomLightColor();
 		var tsize = get_tex_size(text, "50px Tahoma");
-		ctx.fillText(text, (0.5 * (width - tsize.width)), (0.5 * (height + tsize.height)), 0.9 * width);
+		ctx.fillText(text, (0.5 * (width - tsize.width)), (0.5 * (height + tsize.height)), 0.80 * width);
 	}
 
 	// http://stackoverflow.com/questions/1152024/best-way-to-generate-a-random-color-in-javascript
