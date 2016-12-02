@@ -20,10 +20,23 @@
 		ctx.fill();
 		ctx.globalCompositeOperation = 'source-atop';
 		ctx.font = "italic 50px Tahoma";
-		ctx.fillStyle = getRndColor();
+		ctx.fillStyle = getRandomLightColor();
 		var tsize = get_tex_size(text, "50px Tahoma");
 		ctx.fillText(text, (0.5 * (width - tsize.width)), (0.5 * (height + tsize.height)), 0.9 * width);
 	}
+
+	// http://stackoverflow.com/questions/1152024/best-way-to-generate-a-random-color-in-javascript
+	function getRandomLightColor() {
+	  // 30 random hues with step of 12 degrees
+	  var hue = Math.floor(Math.random() * 30) * 12;
+
+	  return $.Color({
+	    hue: hue,
+	    saturation: 0.9,
+	    lightness: 0.6,
+	    alpha: 1
+	  }).toHexString();
+	};
 
 	//http://stackoverflow.com/questions/10726909/random-alpha-numeric-string-in-javascript
 	function  getRandomText() {
